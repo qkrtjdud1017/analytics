@@ -7,7 +7,7 @@ if __name__ == '__main__':
     print('Building Model...')
     crf_model = CrfBrandDetector()
     print('Fitting...')
-    x_train, x_test, y_train, y_test  = crf_model.train_test_split(df)
+    x_train, x_test, y_train, y_test = crf_model.train_test_split(df)
     crf_model.fit(x_train, y_train)
     crf_model.report_classification(x_test, y_test)
     print('Accuracy: {}'.format(crf_model.evaluate(x_test, y_test)))
